@@ -1,0 +1,16 @@
+# Arquivos de origem/design — não fazem parte do site publicado
+/LANDPING PAGE - BASE.psd
+/start-america-v2.pdf
+/start-america-v2.svg
+/Imagens e vídeo/
+/Imagens e vídeo.zip
+/site/
+
+# Cópia local usada antes de ter git configurado — não é mais necessária
+/github-upload/
+
+# Configuração local do Claude Code
+/.claude/
+
+# Arquivo zip antigo (354 MB) — não faz parte do site
+/assets.zip
