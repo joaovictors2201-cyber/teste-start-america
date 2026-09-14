@@ -59,8 +59,6 @@
       'Conta, pagamentos e câmbio': 'Account, payments and FX',
       'Abertura de conta nos Estados Unidos, gateways, remessas e conciliação com o Brasil.':
         'U.S. bank account opening, gateways, remittances and reconciliation with Brazil.',
-      'Segurança antimulta': 'Penalty protection',
-
       // Urgência
       'O empresário brasileiro está perdendo margem em frentes ao mesmo tempo.':
         'Brazilian business owners are losing margin on several fronts at once.',
@@ -372,8 +370,6 @@
       'Conta, pagamentos e câmbio': 'Cuenta, pagos y cambio',
       'Abertura de conta nos Estados Unidos, gateways, remessas e conciliação com o Brasil.':
         'Apertura de cuenta en Estados Unidos, gateways, remesas y conciliación con Brasil.',
-      'Segurança antimulta': 'Protección ante multas',
-
       'O empresário brasileiro está perdendo margem em frentes ao mesmo tempo.':
         'El empresario brasileño está perdiendo margen en varios frentes a la vez.',
       'Tributação na fonte, reforma tributária, split payment, insegurança jurídica e margem apertada. Veja quanto isso pesa no seu caso.':
