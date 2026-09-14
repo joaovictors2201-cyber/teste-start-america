@@ -253,9 +253,9 @@
       'Qual é o prazo de abertura da empresa?': 'How long does it take to open the company?',
       'Na maioria dos estados, a constituição sai em cerca de 5 dias úteis. EIN e conta bancária dependem de análise dos órgãos e das instituições, e acompanhamos cada etapa com você.':
         'In most states, incorporation takes about 5 business days. The EIN and bank account depend on agency and institution reviews, and we follow each step with you.',
-      'A simulação tem custo ou compromisso?': 'Does the simulation have any cost or obligation?',
-      'A simulação inicial é gratuita e não gera obrigação de contratar. Ela serve para você entender o potencial de economia antes de decidir os próximos passos.':
-        'The initial simulation is free and creates no obligation to hire. It helps you understand the savings potential before deciding on next steps.',
+      'Vocês ajudam a abrir conta bancária nos Estados Unidos?': 'Do you help open a U.S. bank account?',
+      'Sim. Fazemos a intermediação para abertura de conta bancária assim que a empresa é constituída, além de orientar sobre gateways de pagamento e remessas entre o Brasil e os Estados Unidos.':
+        'Yes. We help open a bank account as soon as the company is incorporated, and guide you on payment gateways and remittances between Brazil and the U.S.',
 
       // Formulário
       'Fale com um especialista': 'Talk to a specialist',
@@ -298,9 +298,6 @@
       'Informe um e-mail válido.': 'Please enter a valid email.',
       'Informe um telefone válido com DDD.': 'Please enter a valid phone number with area code.',
 
-      // CTA final
-      'Iniciar Simulação Gratuita': 'Start free simulation',
-
       // Footer
       'Navegação': 'Navigation',
       'Nosso time': 'Our team',
@@ -314,8 +311,8 @@
       'Start América — assessoria em estruturação internacional, abertura de empresas, contabilidade, tax e compliance para operações entre o Brasil e os Estados Unidos.':
         'Start América — advisory in international structuring, company formation, accounting, tax and compliance for operations between Brazil and the United States.',
       'Todos os direitos reservados.': 'All rights reserved.',
-      'Aviso legal: o conteúdo deste site é informativo e não constitui aconselhamento jurídico, contábil ou de investimento. Resultados de simulação são estimativas e dependem de análise individual. Start América não é instituição financeira.':
-        'Legal notice: the content of this site is informational and does not constitute legal, accounting or investment advice. Simulation results are estimates and depend on individual analysis. Start América is not a financial institution.',
+      'Aviso legal: o conteúdo deste site é informativo e não constitui aconselhamento jurídico, contábil ou de investimento. As informações apresentadas dependem de análise individual. Start América não é instituição financeira.':
+        'Legal notice: the content of this site is informational and does not constitute legal, accounting or investment advice. The information presented depends on individual analysis. Start América is not a financial institution.',
       'Pular para o conteúdo': 'Skip to content',
       'Falar pelo WhatsApp': 'Chat on WhatsApp',
       'Abrir menu': 'Open menu',
@@ -552,9 +549,9 @@
       'Qual é o prazo de abertura da empresa?': '¿Cuál es el plazo para abrir la empresa?',
       'Na maioria dos estados, a constituição sai em cerca de 5 dias úteis. EIN e conta bancária dependem de análise dos órgãos e das instituições, e acompanhamos cada etapa com você.':
         'En la mayoría de los estados, la constitución sale en unos 5 días hábiles. El EIN y la cuenta bancaria dependen del análisis de los organismos e instituciones, y acompañamos cada etapa contigo.',
-      'A simulação tem custo ou compromisso?': '¿La simulación tiene costo o compromiso?',
-      'A simulação inicial é gratuita e não gera obrigação de contratar. Ela serve para você entender o potencial de economia antes de decidir os próximos passos.':
-        'La simulación inicial es gratuita y no genera obligación de contratar. Sirve para entender el ahorro potencial antes de decidir los próximos pasos.',
+      'Vocês ajudam a abrir conta bancária nos Estados Unidos?': '¿Ayudan a abrir una cuenta bancaria en Estados Unidos?',
+      'Sim. Fazemos a intermediação para abertura de conta bancária assim que a empresa é constituída, além de orientar sobre gateways de pagamento e remessas entre o Brasil e os Estados Unidos.':
+        'Sí. Ayudamos a abrir la cuenta bancaria en cuanto la empresa está constituida, además de orientar sobre pasarelas de pago y remesas entre Brasil y Estados Unidos.',
 
       'Fale com um especialista': 'Habla con un especialista',
       'Nome completo': 'Nombre completo',
@@ -596,8 +593,6 @@
       'Informe um e-mail válido.': 'Ingresa un correo válido.',
       'Informe um telefone válido com DDD.': 'Ingresa un teléfono válido con código de área.',
 
-      'Iniciar Simulação Gratuita': 'Iniciar simulación gratuita',
-
       'Navegação': 'Navegación',
       'Nosso time': 'Nuestro equipo',
       'Na mídia': 'En los medios',
@@ -610,8 +605,8 @@
       'Start América — assessoria em estruturação internacional, abertura de empresas, contabilidade, tax e compliance para operações entre o Brasil e os Estados Unidos.':
         'Start América — asesoría en estructuración internacional, apertura de empresas, contabilidad, impuestos y compliance para operaciones entre Brasil y Estados Unidos.',
       'Todos os direitos reservados.': 'Todos los derechos reservados.',
-      'Aviso legal: o conteúdo deste site é informativo e não constitui aconselhamento jurídico, contábil ou de investimento. Resultados de simulação são estimativas e dependem de análise individual. Start América não é instituição financeira.':
-        'Aviso legal: el contenido de este sitio es informativo y no constituye asesoramiento jurídico, contable ni de inversión. Los resultados de simulación son estimaciones y dependen de un análisis individual. Start América no es una institución financiera.',
+      'Aviso legal: o conteúdo deste site é informativo e não constitui aconselhamento jurídico, contábil ou de investimento. As informações apresentadas dependem de análise individual. Start América não é instituição financeira.':
+        'Aviso legal: el contenido de este sitio es informativo y no constituye asesoramiento jurídico, contable ni de inversión. La información presentada depende de un análisis individual. Start América no es una institución financiera.',
       'Pular para o conteúdo': 'Saltar al contenido',
       'Falar pelo WhatsApp': 'Hablar por WhatsApp',
       'Abrir menu': 'Abrir menú',
