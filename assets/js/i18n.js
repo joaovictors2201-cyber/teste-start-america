@@ -198,7 +198,6 @@
         'Risk of losing the client base to those who offer more than tax slips and balance sheets.',
       'O que você passa a oferecer': 'What you get to <span class="text-gold">offer</span>',
       'Estratégia tributária internacional com especialistas.': 'International tax strategy with specialists.',
-      'Simulador que mostra ao cliente dele quanto ele economiza.': 'A simulator that shows the client how much they save.',
       'Compliance e blindagem jurídica que o escritório do lado não tem.':
         'Compliance and legal protection the firm next door does not have.',
       'Assessoria jurídica e tributária de apoio, sem contratar ninguém.':
@@ -231,7 +230,6 @@
       'Conduz a venda': 'Leads the sale',
       'Conduz a venda até o onboarding': 'Leads the sale through onboarding',
       'Portal white label com a marca dele': 'White-label portal with their brand',
-      'Simulador liberado (até 10 associados)': 'Simulator access (up to 10 associates)',
       'Diamante': 'Diamond',
       'Negociado': 'Negotiated',
       'Condição própria': 'Custom terms',
@@ -242,8 +240,6 @@
       'Indicação Bronze': 'Bronze referral',
       'Indicação Prata': 'Silver referral',
       'Falar com consultor': 'Talk to a consultant',
-      'O simulador é liberado apenas para associados sob termo, limitado a dez escritórios':
-        'The simulator is released only to associates under agreement, limited to ten firms.',
 
       // FAQ
       'Perguntas Frequentes': 'Frequently Asked Questions',
@@ -503,7 +499,6 @@
         'Riesgo de perder la cartera ante quienes ofrecen más que declaraciones y balances.',
       'O que você passa a oferecer': 'Lo que pasas a <span class="text-gold">ofrecer</span>',
       'Estratégia tributária internacional com especialistas.': 'Estrategia tributaria internacional con especialistas.',
-      'Simulador que mostra ao cliente dele quanto ele economiza.': 'Un simulador que muestra al cliente cuánto ahorra.',
       'Compliance e blindagem jurídica que o escritório do lado não tem.':
         'Compliance y blindaje jurídico que el estudio de al lado no tiene.',
       'Assessoria jurídica e tributária de apoio, sem contratar ninguém.':
@@ -535,7 +530,6 @@
       'Conduz a venda': 'Lidera la venta',
       'Conduz a venda até o onboarding': 'Lidera la venta hasta el onboarding',
       'Portal white label com a marca dele': 'Portal white label con su marca',
-      'Simulador liberado (até 10 associados)': 'Acceso al simulador (hasta 10 asociados)',
       'Diamante': 'Diamante',
       'Negociado': 'Negociado',
       'Condição própria': 'Condiciones a medida',
@@ -546,8 +540,6 @@
       'Indicação Bronze': 'Recomendación Bronce',
       'Indicação Prata': 'Recomendación Plata',
       'Falar com consultor': 'Hablar con un consultor',
-      'O simulador é liberado apenas para associados sob termo, limitado a dez escritórios':
-        'El simulador se habilita solo para asociados bajo acuerdo, limitado a diez estudios.',
 
       'Perguntas Frequentes': 'Preguntas Frecuentes',
       'Preciso de cidadania ou green card para abrir empresa nos Estados Unidos?':
