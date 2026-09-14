@@ -60,7 +60,6 @@
       'Abertura de conta nos Estados Unidos, gateways, remessas e conciliação com o Brasil.':
         'U.S. bank account opening, gateways, remittances and reconciliation with Brazil.',
       'Segurança antimulta': 'Penalty protection',
-      'Simulador com IA': 'AI simulator',
 
       // Urgência
       'O empresário brasileiro está perdendo margem em frentes ao mesmo tempo.':
@@ -110,9 +109,6 @@
 
       // Diferenciais + Equipe
       'O que torna a Start América diferente': 'What makes Start América different',
-      'Simulador com IA, revisado por especialistas': 'AI simulator, reviewed by specialists',
-      'Nossa tecnologia prevê os impactos da reforma automaticamente, mas todo cálculo é validado por um consultor sênior.':
-        'Our technology projects the impact of the reform automatically, but every calculation is validated by a senior consultant.',
       'Cobertura contra riscos e multas': 'Coverage against risks and penalties',
       'Nossa consultoria carrega apólice de responsabilidade civil para que você tenha total tranquilidade operacional e jurídica.':
         'Our firm carries a professional liability policy so you have full operational and legal peace of mind.',
@@ -257,9 +253,9 @@
         'Do I need citizenship or a green card to open a company in the United States?',
       'Não. Estrangeiros não residentes podem ser sócios de uma LLC ou Corporation. O que definimos com você é a estrutura, o estado de registro e as obrigações fiscais que passam a existir nos dois países.':
         'No. Non-resident foreigners can be members of an LLC or Corporation. What we define with you is the structure, the state of registration and the tax obligations that arise in both countries.',
-      'Como funciona o simulador com IA?': 'How does the AI simulator work?',
-      'Você informa faturamento, estado e estrutura desejada. A IA gera uma projeção de carga tributária e economia anual estimada, que é revisada por um especialista antes de virar recomendação.':
-        'You enter revenue, state and desired structure. The AI generates a projection of the tax burden and estimated annual savings, which is reviewed by a specialist before it becomes a recommendation.',
+      'Qual a diferença entre LLC e Corporation?': 'What\'s the difference between an LLC and a Corporation?',
+      'A LLC costuma ser mais simples e vantajosa para quem presta serviços, com menos burocracia e tributação repassada aos sócios. A Corporation faz mais sentido para quem pretende captar investidores ou emitir ações. Avaliamos seu cenário e indicamos a estrutura mais adequada.':
+        'An LLC tends to be simpler and more advantageous for service providers, with less paperwork and pass-through taxation to the members. A Corporation makes more sense if you plan to raise investment or issue shares. We assess your scenario and recommend the most suitable structure.',
       'Qual é o prazo de abertura da empresa?': 'How long does it take to open the company?',
       'Na maioria dos estados, a constituição sai em cerca de 5 dias úteis. EIN e conta bancária dependem de análise dos órgãos e das instituições, e acompanhamos cada etapa com você.':
         'In most states, incorporation takes about 5 business days. The EIN and bank account depend on agency and institution reviews, and we follow each step with you.',
@@ -377,7 +373,6 @@
       'Abertura de conta nos Estados Unidos, gateways, remessas e conciliação com o Brasil.':
         'Apertura de cuenta en Estados Unidos, gateways, remesas y conciliación con Brasil.',
       'Segurança antimulta': 'Protección ante multas',
-      'Simulador com IA': 'Simulador con IA',
 
       'O empresário brasileiro está perdendo margem em frentes ao mesmo tempo.':
         'El empresario brasileño está perdiendo margen en varios frentes a la vez.',
@@ -425,9 +420,6 @@
       'Converse com um dos nossos especialistas': 'Habla con uno de nuestros especialistas',
 
       'O que torna a Start América diferente': 'Lo que hace diferente a Start América',
-      'Simulador com IA, revisado por especialistas': 'Simulador con IA, revisado por especialistas',
-      'Nossa tecnologia prevê os impactos da reforma automaticamente, mas todo cálculo é validado por um consultor sênior.':
-        'Nuestra tecnología prevé el impacto de la reforma automáticamente, pero cada cálculo lo valida un consultor sénior.',
       'Cobertura contra riscos e multas': 'Cobertura ante riesgos y multas',
       'Nossa consultoria carrega apólice de responsabilidade civil para que você tenha total tranquilidade operacional e jurídica.':
         'Nuestra consultoría cuenta con póliza de responsabilidad civil para que tengas total tranquilidad operativa y jurídica.',
@@ -566,9 +558,9 @@
         '¿Necesito ciudadanía o green card para abrir una empresa en Estados Unidos?',
       'Não. Estrangeiros não residentes podem ser sócios de uma LLC ou Corporation. O que definimos com você é a estrutura, o estado de registro e as obrigações fiscais que passam a existir nos dois países.':
         'No. Los extranjeros no residentes pueden ser socios de una LLC o Corporation. Lo que definimos contigo es la estructura, el estado de registro y las obligaciones fiscales que surgen en ambos países.',
-      'Como funciona o simulador com IA?': '¿Cómo funciona el simulador con IA?',
-      'Você informa faturamento, estado e estrutura desejada. A IA gera uma projeção de carga tributária e economia anual estimada, que é revisada por um especialista antes de virar recomendação.':
-        'Ingresas facturación, estado y estructura deseada. La IA genera una proyección de carga tributaria y ahorro anual estimado, revisada por un especialista antes de convertirse en recomendación.',
+      'Qual a diferença entre LLC e Corporation?': '¿Cuál es la diferencia entre una LLC y una Corporation?',
+      'A LLC costuma ser mais simples e vantajosa para quem presta serviços, com menos burocracia e tributação repassada aos sócios. A Corporation faz mais sentido para quem pretende captar investidores ou emitir ações. Avaliamos seu cenário e indicamos a estrutura mais adequada.':
+        'La LLC suele ser más simple y ventajosa para quienes prestan servicios, con menos burocracia y tributación traspasada a los socios. La Corporation tiene más sentido para quienes buscan captar inversionistas o emitir acciones. Evaluamos tu escenario y te recomendamos la estructura más adecuada.',
       'Qual é o prazo de abertura da empresa?': '¿Cuál es el plazo para abrir la empresa?',
       'Na maioria dos estados, a constituição sai em cerca de 5 dias úteis. EIN e conta bancária dependem de análise dos órgãos e das instituições, e acompanhamos cada etapa com você.':
         'En la mayoría de los estados, la constitución sale en unos 5 días hábiles. El EIN y la cuenta bancaria dependen del análisis de los organismos e instituciones, y acompañamos cada etapa contigo.',

@@ -133,13 +133,17 @@
   applySnap();
   mqMobile.addEventListener('change', applySnap);
 
-  /* ---------- Carrossel de imagens (setas laterais) ---------- */
+  /* ---------- Carrossel de imagens (setas laterais, loop opcional) ---------- */
   document.querySelectorAll('[data-carousel]').forEach(function (root) {
     var viewport = root.querySelector('[data-carousel-viewport]');
     var track = root.querySelector('[data-carousel-track]');
     var prevBtn = root.querySelector('[data-carousel-prev]');
     var nextBtn = root.querySelector('[data-carousel-next]');
     if (!viewport || !track || !prevBtn || !nextBtn) return;
+
+    var loop = root.hasAttribute('data-carousel-loop');
+    var autoplayDelay = parseInt(root.getAttribute('data-carousel-autoplay'), 10);
+    var autoplayTimer = null;
 
     function slideStep() {
       var slide = track.querySelector('.location-carousel__slide');
@@ -149,18 +153,51 @@
       return slide.getBoundingClientRect().width + gap;
     }
 
+    var EDGE_TOLERANCE = 4; // margem p/ evitar travar por arredondamento sub-pixel
+
+    function maxScroll() {
+      return viewport.scrollWidth - viewport.clientWidth;
+    }
+
+    function goNext() {
+      if (viewport.scrollLeft >= maxScroll() - EDGE_TOLERANCE) {
+        viewport.scrollTo({ left: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+      } else {
+        viewport.scrollBy({ left: slideStep(), behavior: reduceMotion ? 'auto' : 'smooth' });
+      }
+    }
+    function goPrev() {
+      if (viewport.scrollLeft <= EDGE_TOLERANCE) {
+        viewport.scrollTo({ left: maxScroll(), behavior: reduceMotion ? 'auto' : 'smooth' });
+      } else {
+        viewport.scrollBy({ left: -slideStep(), behavior: reduceMotion ? 'auto' : 'smooth' });
+      }
+    }
+
     function updateArrows() {
-      var max = viewport.scrollWidth - viewport.clientWidth - 1;
+      if (loop) return; // setas sempre ativas — o carrossel dá a volta
+      var max = maxScroll();
       prevBtn.disabled = viewport.scrollLeft <= 0;
       nextBtn.disabled = viewport.scrollLeft >= max;
     }
 
-    prevBtn.addEventListener('click', function () {
-      viewport.scrollBy({ left: -slideStep(), behavior: reduceMotion ? 'auto' : 'smooth' });
-    });
-    nextBtn.addEventListener('click', function () {
-      viewport.scrollBy({ left: slideStep(), behavior: reduceMotion ? 'auto' : 'smooth' });
-    });
+    function stopAutoplay() { if (autoplayTimer) { clearInterval(autoplayTimer); autoplayTimer = null; } }
+    function startAutoplay() {
+      if (!autoplayDelay || reduceMotion) return;
+      stopAutoplay();
+      autoplayTimer = setInterval(goNext, autoplayDelay);
+    }
+
+    prevBtn.addEventListener('click', function () { goPrev(); startAutoplay(); });
+    nextBtn.addEventListener('click', function () { goNext(); startAutoplay(); });
+
+    if (autoplayDelay) {
+      root.addEventListener('mouseenter', stopAutoplay);
+      root.addEventListener('mouseleave', startAutoplay);
+      root.addEventListener('focusin', stopAutoplay);
+      root.addEventListener('focusout', startAutoplay);
+      startAutoplay();
+    }
 
     viewport.addEventListener('scroll', updateArrows, { passive: true });
     window.addEventListener('resize', updateArrows);
