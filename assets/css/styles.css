@@ -224,7 +224,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .bg-navy-2 h2, .bg-navy-2 h3,
 .media-section h2, .media-section h3,
 .photo-section h2, .photo-section h3 { color: var(--heading-light); }
-.bg-navy .lead, .bg-navy-deep .lead, .bg-navy-2 .lead { color: #a7b3c5; }
+.bg-navy .lead, .bg-navy-deep .lead, .bg-navy-2 .lead, .photo-section .lead { color: #a7b3c5; }
 .media-section { color: var(--text); }
 
 /* Seção fotográfica escura */
@@ -675,6 +675,19 @@ ul { margin: 0; padding: 0; list-style: none; }
   border: 1px solid var(--hairline);
   box-shadow: 0 34px 70px -34px rgba(0, 0, 0, 0.6);
 }
+/* Sobre seção com foto de fundo (fundo já escuro): tabela em cartão branco
+   para se destacar bem do fundo, com texto escuro na coluna de comparação
+   e a coluna "Start América" em dourado. */
+.photo-section .compare {
+  background: var(--white);
+  border-color: var(--gray-100);
+  box-shadow: var(--shadow-card);
+}
+.photo-section .compare th,
+.photo-section .compare td { color: var(--gray-600); border-bottom-color: var(--gray-100); }
+.photo-section .compare thead th { color: var(--heading); background: var(--white-soft); }
+.photo-section .compare tbody th { color: var(--heading); }
+.photo-section .compare td .ic-x { color: var(--gray-400); }
 .compare table { width: 100%; border-collapse: collapse; }
 .compare th, .compare td {
   padding: 16px 22px;
@@ -691,6 +704,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   color: #fff;
   background: rgba(255, 255, 255, 0.04);
 }
+.photo-section .compare td.col-start,
+.photo-section .compare .pair .is-start { background: rgba(var(--gold-rgb), 0.08); }
 .compare thead th.col-start { color: var(--gold); }
 .compare tbody th {
   font-family: var(--font-display);
@@ -717,6 +732,10 @@ ul { margin: 0; padding: 0; list-style: none; }
   overflow: hidden;
   background: var(--navy);
 }
+.photo-section .compare-item { background: var(--white); border-color: var(--gray-100); }
+.photo-section .compare-item h3 { color: var(--heading); background: var(--white-soft); }
+.photo-section .compare-item .pair > div { color: var(--gray-600); }
+.photo-section .compare-item .pair > div:first-child { border-right-color: var(--gray-100); }
 .compare-item h3 {
   font-family: var(--font-display);
   font-size: 17.2px;
@@ -1105,6 +1124,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   gap: 20px;
 }
 .field { display: flex; flex-direction: column; gap: 6px; }
+.field[hidden] { display: none; }
 .field--full { grid-column: 1 / -1; }
 .field label {
   font-family: var(--font-body);
@@ -1305,12 +1325,12 @@ ul { margin: 0; padding: 0; list-style: none; }
 .tax-calc {
   margin-top: clamp(48px, 7vw, 80px);
   display: grid;
-  grid-template-columns: 0.85fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 56px;
-  align-items: start;
+  align-items: center;
   text-align: left;
 }
-.tax-calc__intro { display: flex; flex-direction: column; gap: 18px; padding-top: 8px; }
+.tax-calc__intro { display: flex; flex-direction: column; justify-content: center; gap: 18px; }
 .tax-calc__intro .h3 { color: var(--heading); }
 .tax-calc__note { font-size: 14.4px; color: var(--gray-400); line-height: 1.55; }
 
@@ -1324,6 +1344,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   flex-direction: column;
   gap: 22px;
 }
+.tax-calc__form { display: flex; flex-direction: column; gap: 22px; }
+.tax-calc__form[hidden] { display: none; }
 .tax-calc__field { display: flex; flex-direction: column; gap: 10px; }
 .tax-calc__label { font-family: var(--font-display); font-weight: 700; font-size: 14.4px; color: var(--heading); }
 .tax-calc__hint { font-size: 12.6px; color: var(--gray-400); }
@@ -1413,9 +1435,27 @@ ul { margin: 0; padding: 0; list-style: none; }
   flex-direction: column;
   gap: 10px;
 }
+.tax-calc__result[hidden] { display: none; }
 .tax-calc__result-tag { font-family: var(--font-display); font-weight: 800; font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-alt); }
 .tax-calc__result-value { font-family: var(--font-display); font-weight: 700; font-size: 19.6px; color: var(--heading); }
 .tax-calc__result-note { font-size: 13.8px; color: var(--gray-600); line-height: 1.5; }
+.tax-calc__reset {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 2px;
+  padding: 6px;
+  background: none;
+  border: none;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13.8px;
+  color: var(--gray-400);
+  transition: color var(--transition);
+}
+.tax-calc__reset svg { width: 14px; height: 14px; flex: none; }
+.tax-calc__reset:hover { color: var(--gold-alt); }
 
 /* ---------- 21c. Formulário Seja Parceiro / Indique ---------- */
 .partner-form__head { margin-bottom: var(--stack-gap); display: flex; flex-direction: column; gap: 16px; }

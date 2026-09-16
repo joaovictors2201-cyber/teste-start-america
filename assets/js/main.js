@@ -362,10 +362,12 @@
     var segmentoSel = taxCalc.querySelector('[data-segmento]');
     var faturamentoInput = taxCalc.querySelector('[data-faturamento]');
     var faturamentoOut = taxCalc.querySelector('[data-faturamento-out]');
+    var formBox = taxCalc.querySelector('[data-tax-calc-form]');
     var estimarBtn = taxCalc.querySelector('[data-tax-calc-submit]');
     var resultBox = taxCalc.querySelector('[data-tax-calc-result]');
     var resultValue = taxCalc.querySelector('[data-result-value]');
     var taxEmailBtn = taxCalc.querySelector('[data-tax-calc-email]');
+    var resetBtn = taxCalc.querySelector('[data-tax-calc-reset]');
     var currentRegime = 'real';
 
     // Taxas indicativas de impacto (fração do faturamento anual) por segmento,
@@ -373,7 +375,14 @@
     var baseRates = { industria: 0.0076, comercio: 0.009, servicos: 0.014, tecnologia: 0.012 };
     var regimeMultiplier = { real: 1, presumido: 1.22 };
 
-    function hideResult() { if (resultBox) resultBox.hidden = true; }
+    function showForm() {
+      if (formBox) formBox.hidden = false;
+      if (resultBox) resultBox.hidden = true;
+    }
+    function showResult() {
+      if (formBox) formBox.hidden = true;
+      if (resultBox) resultBox.hidden = false;
+    }
 
     function updateRangeProgress() {
       if (!faturamentoInput) return;
@@ -394,16 +403,12 @@
         regimeBtns.forEach(function (b) { b.classList.remove('is-active'); });
         btn.classList.add('is-active');
         currentRegime = btn.getAttribute('data-regime');
-        hideResult();
       });
     });
 
     if (faturamentoInput) {
-      faturamentoInput.addEventListener('input', function () { updateFaturamentoOut(); hideResult(); });
+      faturamentoInput.addEventListener('input', updateFaturamentoOut);
       updateFaturamentoOut();
-    }
-    if (segmentoSel) {
-      segmentoSel.addEventListener('change', hideResult);
     }
 
     if (estimarBtn) {
@@ -413,8 +418,12 @@
         var rate = (baseRates[segmento] || 0.01) * (regimeMultiplier[currentRegime] || 1);
         var impact = faturamento * rate;
         if (resultValue) resultValue.textContent = formatBRCurrency(impact) + ' / ano';
-        if (resultBox) resultBox.hidden = false;
+        showResult();
       });
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', showForm);
     }
 
     if (taxEmailBtn) {
