@@ -1457,6 +1457,51 @@ ul { margin: 0; padding: 0; list-style: none; }
 .tax-calc__reset svg { width: 14px; height: 14px; flex: none; }
 .tax-calc__reset:hover { color: var(--gold-alt); }
 
+.tax-calc__context {
+  margin-top: clamp(40px, 6vw, 64px);
+  padding: clamp(24px, 3vw, 32px);
+  border-radius: var(--radius);
+  background: var(--white-soft);
+  border: 1px solid var(--gray-100);
+}
+.tax-calc__context-head { margin-bottom: 24px; }
+.tax-calc__context-head .h3 { color: var(--heading); margin-bottom: 10px; }
+.tax-calc__context-head .lead { max-width: 82ch; }
+
+.tax-calc__taxes-label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13.8px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gold-alt);
+  margin-bottom: 14px;
+}
+.tax-calc__tax-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.tax-calc__tax-group {
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+}
+.tax-calc__tax-group .tag { margin-bottom: 8px; }
+.tax-calc__tax-group p { font-size: 14.4px; color: var(--gray-600); line-height: 1.5; }
+
+.tax-calc__sources {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--gray-100);
+  font-size: 13px;
+  color: var(--gray-400);
+  line-height: 1.6;
+}
+.tax-calc__sources a { color: var(--gold-alt); text-decoration: underline; text-underline-offset: 2px; }
+.tax-calc__sources a:hover { color: var(--gold); }
+
 /* ---------- 21c. Formulário Seja Parceiro / Indique ---------- */
 .partner-form__head { margin-bottom: var(--stack-gap); display: flex; flex-direction: column; gap: 16px; }
 .partner-form__head h2 { color: #fff; }
@@ -1563,6 +1608,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   .hero__grid { grid-template-columns: 1fr; gap: 40px; }
   .accountant-grid { grid-template-columns: 1fr; gap: 36px; }
   .tax-calc { grid-template-columns: 1fr; gap: 32px; }
+  .tax-calc__tax-grid { grid-template-columns: repeat(2, 1fr); }
 
   .location-carousel__slide { flex-basis: calc((100% - 24px) / 2); }
 
