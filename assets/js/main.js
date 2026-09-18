@@ -365,15 +365,52 @@
     var formBox = taxCalc.querySelector('[data-tax-calc-form]');
     var estimarBtn = taxCalc.querySelector('[data-tax-calc-submit]');
     var resultBox = taxCalc.querySelector('[data-tax-calc-result]');
-    var resultValue = taxCalc.querySelector('[data-result-value]');
+    var resultFaturamento = taxCalc.querySelector('[data-result-faturamento]');
+    var gaugeBrValue = taxCalc.querySelector('[data-gauge-br-value]');
+    var gaugeBrFill = taxCalc.querySelector('[data-gauge-br-fill]');
+    var gaugeBrBreakdown = taxCalc.querySelector('[data-gauge-br-breakdown]');
+    var gaugeEuaValue = taxCalc.querySelector('[data-gauge-eua-value]');
+    var gaugeEuaFill = taxCalc.querySelector('[data-gauge-eua-fill]');
+    var gaugeOtimValue = taxCalc.querySelector('[data-gauge-otim-value]');
+    var gaugeOtimFill = taxCalc.querySelector('[data-gauge-otim-fill]');
+    var resultEstado = taxCalc.querySelector('[data-result-estado]');
+    var resultSavings = taxCalc.querySelector('[data-result-savings]');
     var taxEmailBtn = taxCalc.querySelector('[data-tax-calc-email]');
     var resetBtn = taxCalc.querySelector('[data-tax-calc-reset]');
     var currentRegime = 'real';
 
-    // Taxas indicativas de impacto (fração do faturamento anual) por segmento,
-    // ajustadas pelo regime tributário — apenas para a estimativa do pré-diagnóstico.
-    var baseRates = { industria: 0.0076, comercio: 0.009, servicos: 0.014, tecnologia: 0.012 };
-    var regimeMultiplier = { real: 1, presumido: 1.22 };
+    // Perfis indicativos por segmento — carga tributária brasileira (com o detalhamento
+    // de IBS, CBS e créditos da Reforma), a referência de estrutura fiscal nos Estados
+    // Unidos e a faixa de projeção otimizada. Apenas para o pré-diagnóstico; não substitui
+    // análise técnica.
+    var segmentProfiles = {
+      industria: {
+        cargaBR: 28, ibs: 7.2, cbs: 1.8, creditos: -2.5, splitDays: 'retém de 2 a 5 dias de caixa',
+        euaRate: 14, otimMin: 4, otimMax: 6, estado: 'Delaware', entidade: 'LLC'
+      },
+      comercio: {
+        cargaBR: 30, ibs: 8.0, cbs: 2.0, creditos: -2.0, splitDays: 'retém de 3 a 6 dias de caixa',
+        euaRate: 13, otimMin: 4, otimMax: 6.5, estado: 'Wyoming', entidade: 'LLC'
+      },
+      servicos: {
+        cargaBR: 34, ibs: 9.5, cbs: 2.6, creditos: -1.0, splitDays: 'retém de 5 a 8 dias de caixa',
+        euaRate: 16, otimMin: 3, otimMax: 5, estado: 'Delaware', entidade: 'LLC'
+      },
+      tecnologia: {
+        cargaBR: 32, ibs: 8.8, cbs: 2.4, creditos: -1.6, splitDays: 'retém de 4 a 7 dias de caixa',
+        euaRate: 15, otimMin: 3.5, otimMax: 5.5, estado: 'Delaware', entidade: 'C-Corp'
+      }
+    };
+    var GAUGE_SCALE_MAX = 40; // referência de topo das barras (%) — a carga BR é a maior faixa
+    var FX_RATE = 5.4; // câmbio aproximado BRL/USD, só para a estimativa de economia
+
+    function fmtPct(n) {
+      var r = Math.round(n * 10) / 10;
+      return (r % 1 === 0 ? r.toFixed(0) : r.toFixed(1).replace('.', ',')) + '%';
+    }
+    function gaugeWidth(n) {
+      return Math.max(4, Math.min(100, (n / GAUGE_SCALE_MAX) * 100)) + '%';
+    }
 
     function showForm() {
       if (formBox) formBox.hidden = false;
@@ -415,9 +452,37 @@
       estimarBtn.addEventListener('click', function () {
         var faturamento = parseFloat(faturamentoInput.value) || 0;
         var segmento = segmentoSel.value;
-        var rate = (baseRates[segmento] || 0.01) * (regimeMultiplier[currentRegime] || 1);
-        var impact = faturamento * rate;
-        if (resultValue) resultValue.textContent = formatBRCurrency(impact) + ' / ano';
+        var profile = segmentProfiles[segmento] || segmentProfiles.industria;
+
+        // Lucro Presumido tem menos margem para aproveitar créditos não cumulativos
+        // de IBS/CBS do que o Lucro Real, então a carga sobe e o crédito encolhe.
+        var isPresumido = currentRegime === 'presumido';
+        var cargaBR = profile.cargaBR + (isPresumido ? 3 : 0);
+        var creditos = profile.creditos * (isPresumido ? 0.4 : 1);
+        var otimMed = (profile.otimMin + profile.otimMax) / 2;
+
+        if (resultFaturamento) resultFaturamento.textContent = formatBRCurrency(faturamento) + ',00';
+
+        if (gaugeBrValue) gaugeBrValue.textContent = fmtPct(cargaBR);
+        if (gaugeBrFill) gaugeBrFill.style.width = gaugeWidth(cargaBR);
+        if (gaugeBrBreakdown) {
+          gaugeBrBreakdown.textContent = 'IBS ' + fmtPct(profile.ibs) + ' · CBS ' + fmtPct(profile.cbs) +
+            ' · Créditos ' + fmtPct(creditos) + ' · Split payment ' + profile.splitDays;
+        }
+
+        if (gaugeEuaValue) gaugeEuaValue.textContent = fmtPct(profile.euaRate);
+        if (gaugeEuaFill) gaugeEuaFill.style.width = gaugeWidth(profile.euaRate);
+
+        if (gaugeOtimValue) gaugeOtimValue.textContent = fmtPct(profile.otimMin) + ' – ' + fmtPct(profile.otimMax);
+        if (gaugeOtimFill) gaugeOtimFill.style.width = gaugeWidth(otimMed);
+
+        if (resultEstado) resultEstado.textContent = profile.estado + ' · ' + profile.entidade;
+
+        if (resultSavings) {
+          var savingsUSD = Math.max(0, faturamento * (cargaBR - otimMed) / 100 / FX_RATE);
+          resultSavings.textContent = '+ US$ ' + Math.round(savingsUSD).toLocaleString('pt-BR');
+        }
+
         showResult();
       });
     }

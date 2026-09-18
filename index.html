@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Geist:wght@400;500&family=Sorts+Mill+Goudy:ital@0;1&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260918a" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260918b" />
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -445,8 +445,48 @@
             </div>
 
             <div class="tax-calc__result" data-tax-calc-result hidden>
-              <span class="tax-calc__result-tag">Estimativa de Impacto</span>
-              <p class="tax-calc__result-value">Impacto estimado: <strong data-result-value>R$ 0 / ano</strong></p>
+              <div class="tax-calc__result-header">
+                <span class="tax-calc__result-tag">Faturamento anual no BR</span>
+                <p class="tax-calc__result-amount" data-result-faturamento>R$ 0,00</p>
+              </div>
+
+              <div class="tax-calc__gauges">
+                <div class="tax-calc__gauge">
+                  <div class="tax-calc__gauge-row">
+                    <span>Carga tributária BR</span>
+                    <span class="tax-calc__gauge-value" data-gauge-br-value>0%</span>
+                  </div>
+                  <div class="tax-calc__gauge-bar"><span class="tax-calc__gauge-fill tax-calc__gauge-fill--br" data-gauge-br-fill></span></div>
+                  <p class="tax-calc__gauge-breakdown" data-gauge-br-breakdown></p>
+                </div>
+
+                <div class="tax-calc__gauge">
+                  <div class="tax-calc__gauge-row">
+                    <span>Estrutura fiscal EUA</span>
+                    <span class="tax-calc__gauge-value" data-gauge-eua-value>0%</span>
+                  </div>
+                  <div class="tax-calc__gauge-bar"><span class="tax-calc__gauge-fill tax-calc__gauge-fill--eua" data-gauge-eua-fill></span></div>
+                </div>
+
+                <div class="tax-calc__gauge">
+                  <div class="tax-calc__gauge-row">
+                    <span>Projeção otimizada</span>
+                    <span class="tax-calc__gauge-value" data-gauge-otim-value>0%</span>
+                  </div>
+                  <div class="tax-calc__gauge-bar"><span class="tax-calc__gauge-fill tax-calc__gauge-fill--otim" data-gauge-otim-fill></span></div>
+                </div>
+              </div>
+
+              <div class="tax-calc__suggestion">
+                <span class="tax-calc__suggestion-label">Estado sugerido</span>
+                <p class="tax-calc__suggestion-value" data-result-estado>Delaware · LLC</p>
+              </div>
+
+              <div class="tax-calc__savings">
+                <span>Economia anual estimada</span>
+                <strong data-result-savings>+ US$ 0</strong>
+              </div>
+
               <p class="tax-calc__result-note">
                 Estimativa indicativa. Valide com análise técnica de IBS, CBS, créditos e split payment.
               </p>
@@ -826,7 +866,7 @@
     </div>
   </div>
 
-  <script src="assets/js/i18n.js?v=20260918a" defer></script>
-  <script src="assets/js/main.js?v=20260918a" defer></script>
+  <script src="assets/js/i18n.js?v=20260918b" defer></script>
+  <script src="assets/js/main.js?v=20260918b" defer></script>
 </body>
 </html>
