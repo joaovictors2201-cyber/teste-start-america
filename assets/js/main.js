@@ -369,36 +369,30 @@
     var gaugeBrValue = taxCalc.querySelector('[data-gauge-br-value]');
     var gaugeBrFill = taxCalc.querySelector('[data-gauge-br-fill]');
     var gaugeBrBreakdown = taxCalc.querySelector('[data-gauge-br-breakdown]');
-    var gaugeEuaValue = taxCalc.querySelector('[data-gauge-eua-value]');
-    var gaugeEuaFill = taxCalc.querySelector('[data-gauge-eua-fill]');
-    var gaugeOtimValue = taxCalc.querySelector('[data-gauge-otim-value]');
-    var gaugeOtimFill = taxCalc.querySelector('[data-gauge-otim-fill]');
-    var resultEstado = taxCalc.querySelector('[data-result-estado]');
     var resultSavings = taxCalc.querySelector('[data-result-savings]');
     var taxEmailBtn = taxCalc.querySelector('[data-tax-calc-email]');
     var resetBtn = taxCalc.querySelector('[data-tax-calc-reset]');
     var currentRegime = 'real';
 
     // Perfis indicativos por segmento — carga tributária brasileira (com o detalhamento
-    // de IBS, CBS e créditos da Reforma), a referência de estrutura fiscal nos Estados
-    // Unidos e a faixa de projeção otimizada. Apenas para o pré-diagnóstico; não substitui
-    // análise técnica.
+    // de IBS, CBS e créditos da Reforma) e a faixa de projeção otimizada usada para
+    // estimar a economia. Apenas para o pré-diagnóstico; não substitui análise técnica.
     var segmentProfiles = {
       industria: {
         cargaBR: 28, ibs: 7.2, cbs: 1.8, creditos: -2.5, splitDays: 'retém de 2 a 5 dias de caixa',
-        euaRate: 14, otimMin: 4, otimMax: 6, estado: 'Delaware', entidade: 'LLC'
+        otimMin: 4, otimMax: 6
       },
       comercio: {
         cargaBR: 30, ibs: 8.0, cbs: 2.0, creditos: -2.0, splitDays: 'retém de 3 a 6 dias de caixa',
-        euaRate: 13, otimMin: 4, otimMax: 6.5, estado: 'Wyoming', entidade: 'LLC'
+        otimMin: 4, otimMax: 6.5
       },
       servicos: {
         cargaBR: 34, ibs: 9.5, cbs: 2.6, creditos: -1.0, splitDays: 'retém de 5 a 8 dias de caixa',
-        euaRate: 16, otimMin: 3, otimMax: 5, estado: 'Delaware', entidade: 'LLC'
+        otimMin: 3, otimMax: 5
       },
       tecnologia: {
         cargaBR: 32, ibs: 8.8, cbs: 2.4, creditos: -1.6, splitDays: 'retém de 4 a 7 dias de caixa',
-        euaRate: 15, otimMin: 3.5, otimMax: 5.5, estado: 'Delaware', entidade: 'C-Corp'
+        otimMin: 3.5, otimMax: 5.5
       }
     };
     var GAUGE_SCALE_MAX = 40; // referência de topo das barras (%) — a carga BR é a maior faixa
@@ -469,14 +463,6 @@
           gaugeBrBreakdown.textContent = 'IBS ' + fmtPct(profile.ibs) + ' · CBS ' + fmtPct(profile.cbs) +
             ' · Créditos ' + fmtPct(creditos) + ' · Split payment ' + profile.splitDays;
         }
-
-        if (gaugeEuaValue) gaugeEuaValue.textContent = fmtPct(profile.euaRate);
-        if (gaugeEuaFill) gaugeEuaFill.style.width = gaugeWidth(profile.euaRate);
-
-        if (gaugeOtimValue) gaugeOtimValue.textContent = fmtPct(profile.otimMin) + ' – ' + fmtPct(profile.otimMax);
-        if (gaugeOtimFill) gaugeOtimFill.style.width = gaugeWidth(otimMed);
-
-        if (resultEstado) resultEstado.textContent = profile.estado + ' · ' + profile.entidade;
 
         if (resultSavings) {
           var savingsUSD = Math.max(0, faturamento * (cargaBR - otimMed) / 100 / FX_RATE);

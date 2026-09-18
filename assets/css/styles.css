@@ -1463,27 +1463,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .tax-calc__gauge-fill { display: block; height: 100%; width: 0%; border-radius: inherit; transition: width 500ms ease; }
 .tax-calc__gauge-fill--br { background: var(--red); }
-.tax-calc__gauge-fill--eua { background: var(--gold); }
-.tax-calc__gauge-fill--otim { background: var(--green); }
 .tax-calc__gauge-breakdown { margin-top: 8px; font-size: 12.1px; color: var(--gray-400); line-height: 1.55; }
-
-.tax-calc__suggestion {
-  padding: 14px 16px;
-  border-radius: var(--radius-sm);
-  background: var(--white);
-  border: 1px solid var(--gray-100);
-}
-.tax-calc__suggestion-label {
-  display: block;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 11.5px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--gray-400);
-  margin-bottom: 4px;
-}
-.tax-calc__suggestion-value { font-family: var(--font-title); font-size: 19.6px; color: var(--heading); }
 
 .tax-calc__savings {
   display: flex;
